@@ -1,0 +1,61 @@
+import camion2.*
+import cosas2.*
+
+
+describe "Paquete de ladrillos"{
+	test"Peso y bulto del ladrillo, 250 ladrillo pesan 500k"{
+		paqueteLadrillos.cantLadrillos(250)
+		assert.equals(500,paqueteLadrillos.peso())
+		assert.equals(2,paqueteLadrillos.totalBultos())
+	}
+	test"Peso y bulto del ladrillo, 20 ladrillo pesan 40k"{
+		paqueteLadrillos.cantLadrillos(20)
+		assert.equals(40,paqueteLadrillos.peso())
+		assert.equals(1,paqueteLadrillos.totalBultos())
+	}
+	test"Peso y bulto del ladrillo, 30 ladrillo pesan 60k"{
+		paqueteLadrillos.cantLadrillos(30)
+		assert.equals(60,paqueteLadrillos.peso())
+		assert.equals(1,paqueteLadrillos.totalBultos())
+	}
+	test"Peso y bulto del ladrillo, 120 ladrillo pesan 240k"{
+		paqueteLadrillos.cantLadrillos(120)
+		assert.equals(240,paqueteLadrillos.peso())
+		assert.equals(2,paqueteLadrillos.totalBultos())
+	}
+	test"Peso y bulto del ladrillo, 400 ladrillo pesan 800k"{
+		paqueteLadrillos.cantLadrillos(400)
+		assert.equals(800,paqueteLadrillos.peso())
+		assert.equals(3,paqueteLadrillos.totalBultos())
+	}
+}
+
+describe "Embalaje"{
+	test"Embalando 30k de residuos radioactivos y verificando bulto"{
+		residuosRadioactivos.peso(30)
+		embalajeSeguridad.cosa(residuosRadioactivos)
+		assert.equals(2,embalajeSeguridad.totalBultos())
+	}
+}
+
+describe "Bateria antiaerea"{
+	test"Totalbulto de la batería antiaérea con misiles"{
+		assert.equals(2,bateriaAntiarea.totalBultos())
+	}
+	test"Totalbulto de la batería antiaérea sin misiles"{
+		bateriaAntiarea.cambiarEstadoDeMisiles()
+		assert.equals(1,bateriaAntiarea.totalBultos())
+	}
+}
+
+describe "Contenedor"{
+	test "Peso y bulto de la arena, ladrillos y Bumblebee"{
+		paqueteLadrillos.cantLadrillos(5)
+		arena.peso(10)
+		contenedor.agregarObjeto(paqueteLadrillos)
+		contenedor.agregarObjeto(arena)
+		contenedor.agregarObjeto(bumblebee)
+		assert.equals(920,contenedor.peso()) 
+		assert.equals(5,contenedor.totalBultos())
+	}
+}

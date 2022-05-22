@@ -1,0 +1,27 @@
+import camion2.*
+import cosas2.*
+
+describe "Camion Parte 2"{
+	method initialize(){
+		camion.cargar(bumblebee)
+		arena.peso(150)
+		camion.cargar(arena)
+		camion.cargar(bateriaAntiarea)
+		camion.cargar(embalajeSeguridad)
+		paqueteLadrillos.cantLadrillos(80)
+		embalajeSeguridad.cosa(paqueteLadrillos)
+	}
+		
+	test "Bumblebee no es auto, es un robot"{
+		assert.notThat(bumblebee.esAuto())
+	}
+	test "Hay 80 ladrillos"{
+		assert.equals(80, paqueteLadrillos.cantLadrillos())
+	}
+	test "La arena pesa 170kg"{
+		assert.equals(170, arena.peso())
+	}
+	test "La bateria antiaerea esta cargada"{
+		assert.that(bateriaAntiarea.tieneMisiles())
+	}
+}
