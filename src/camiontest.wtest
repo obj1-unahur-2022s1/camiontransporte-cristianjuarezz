@@ -9,7 +9,7 @@ describe "Camion:"{
 		camion.cargar(bateriaAntiarea)
 		camion.cargar(embalajeSeguridad)
 		embalajeSeguridad.cosa(paqueteLadrillos)
-		paqueteLadrillos.cantLadrillos(80)
+		paqueteLadrillos.ladrillos(80)
 	}
 	test "El peso será par"{
 		assert.that(camion.todoPesoPar())
@@ -27,16 +27,16 @@ describe "Camion:"{
 		assert.notThat(camion.excedidoDePeso())
 	}
 	test "Lista de cosas que superan el nivel de peligrosidad 4"{
-		assert.equals([bumblebee,bateriaAntiarea], camion.objetosQueSuperanPeligrosidad(4))
+		assert.equals([bumblebee,bateriaAntiarea], camion.cosasDeMayorPeligrosidadNivel(4))
 	}
 	test "Lista de objetos mas peligros que la arena"{
-		assert.equals([bumblebee,arena,bateriaAntiarea,embalajeSeguridad], camion.objetosMasPeligrososQue(arena))
+		assert.equals([bumblebee,arena,bateriaAntiarea,embalajeSeguridad], camion.cosasMasPeligrososQue(arena))
 	}
 	test "No puede circular en ruta con cosas con nivel de peligrosidad mayor a 5"{
 		assert.notThat(camion.puedeCircularEnRuta(5))
 	}
 	test "Tiene algo que pesa entre 100kg y 700kg"{
-		assert.that(camion.tieneAlgoQuePesaEntre(100,700))
+		assert.that(camion.hayAlgoQuePesaEntre(100,700))
 	}
 	test "Devuelve a cosa mas pesada cargada en el camion"{
 		assert.equals(bumblebee, camion.cosaMasPesada())

@@ -1,5 +1,5 @@
-import camion2.*
-import cosas2.*
+import camionCarga.*
+import cosasParte2.*
 
 describe "Camion Parte 2"{
 	method initialize(){
@@ -8,7 +8,7 @@ describe "Camion Parte 2"{
 		camion.cargar(arena)
 		camion.cargar(bateriaAntiarea)
 		camion.cargar(embalajeSeguridad)
-		paqueteLadrillos.cantLadrillos(80)
+		paqueteLadrillos.ladrillos(80)
 		embalajeSeguridad.cosa(paqueteLadrillos)
 	}
 		
@@ -16,7 +16,7 @@ describe "Camion Parte 2"{
 		assert.notThat(bumblebee.esAuto())
 	}
 	test "Hay 80 ladrillos"{
-		assert.equals(80, paqueteLadrillos.cantLadrillos())
+		assert.equals(80, paqueteLadrillos.ladrillos())
 	}
 	test "La arena pesa 170kg"{
 		assert.equals(170, arena.peso())

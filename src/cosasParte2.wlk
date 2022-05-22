@@ -19,10 +19,10 @@ object paqueteLadrillos{
 	var property ladrillos = 0
 	method peso() = ladrillos * 2
 	method peligrosidad()= 2
-	method totalBultos() = if(self.cantLadrillos().between(1,100)){1}
-							else if (self.cantLadrillos().between(101,300)){2}
+	method totalBultos() = if(self.ladrillos().between(1,100)){1}
+							else if (self.ladrillos().between(101,300)){2}
 							else{3}
-	method consecuencias(){cantLadrillos += 12}
+	method consecuencias(){ladrillos += 12}
 }
 
 object arena {

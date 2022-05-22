@@ -1,4 +1,4 @@
-import cosas2.*
+import cosasParte2.*
 
 object camion {
 	const cosas = []
@@ -14,10 +14,10 @@ object camion {
 	method elDeNivel(nivel) = cosas.find({c=>c.peligrosidad()==nivel})
 	method pesoCamionVacio() = 1000
 	method excedidoDePeso() = self.pesoTotal()>2500
-	method objetosQueSuperanPeligrosidad(nivel) = cosas.filter({c=>c.peligrosidad()>=nivel})
-	method objetosMasPeligrososQue(cosa) = self.objetosQueSuperanPeligrosidad(cosa.peligrosidad())
+	method cosasDeMayorPeligrosidadNivel(nivel) = cosas.filter({c=>c.peligrosidad()>=nivel})
+	method cosasMasPeligrososQue(cosa) = self.objetosDeMayorPeligrosidadNivel(cosa.peligrosidad())
 	method puedeCircularEnRuta(nivelMaximoPeligrosidad) = self.excedidoDePeso() and self.objetosQueSuperanPeligrosidad(nivelMaximoPeligrosidad).isEmpty()
-	method tieneAlgoQuePesaEntre(min, max) = cosas.any({c=>c.peso().between(min,max)})
+	method hayAlgoQuePesaEntre(min, max) = cosas.any({c=>c.peso().between(min,max)})
 	method cosaMasPesada() = cosas.max({c=>c.peso()})
 	method pesos() = cosas.map({c=>c.peso()})
 }

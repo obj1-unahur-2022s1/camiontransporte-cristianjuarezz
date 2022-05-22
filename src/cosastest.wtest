@@ -1,30 +1,30 @@
-import camion2.*
-import cosas2.*
+import camionCarga.*
+import cosasParte2.*
 
 
 describe "Paquete de ladrillos"{
 	test"Peso y bulto del ladrillo, 250 ladrillo pesan 500k"{
-		paqueteLadrillos.cantLadrillos(250)
+		paqueteLadrillos.ladrillos(250)
 		assert.equals(500,paqueteLadrillos.peso())
 		assert.equals(2,paqueteLadrillos.totalBultos())
 	}
 	test"Peso y bulto del ladrillo, 20 ladrillo pesan 40k"{
-		paqueteLadrillos.cantLadrillos(20)
+		paqueteLadrillos.ladrillos(20)
 		assert.equals(40,paqueteLadrillos.peso())
 		assert.equals(1,paqueteLadrillos.totalBultos())
 	}
 	test"Peso y bulto del ladrillo, 30 ladrillo pesan 60k"{
-		paqueteLadrillos.cantLadrillos(30)
+		paqueteLadrillos.ladrillos(30)
 		assert.equals(60,paqueteLadrillos.peso())
 		assert.equals(1,paqueteLadrillos.totalBultos())
 	}
 	test"Peso y bulto del ladrillo, 120 ladrillo pesan 240k"{
-		paqueteLadrillos.cantLadrillos(120)
+		paqueteLadrillos.ladrillos(120)
 		assert.equals(240,paqueteLadrillos.peso())
 		assert.equals(2,paqueteLadrillos.totalBultos())
 	}
 	test"Peso y bulto del ladrillo, 400 ladrillo pesan 800k"{
-		paqueteLadrillos.cantLadrillos(400)
+		paqueteLadrillos.ladrillos(400)
 		assert.equals(800,paqueteLadrillos.peso())
 		assert.equals(3,paqueteLadrillos.totalBultos())
 	}
@@ -43,7 +43,7 @@ describe "Bateria antiaerea"{
 		assert.equals(2,bateriaAntiarea.totalBultos())
 	}
 	test"Totalbulto de la batería antiaérea sin misiles"{
-		bateriaAntiarea.cambiarEstadoDeMisiles()
+		bateriaAntiarea.alternarTenenciaMisiles()
 		assert.equals(1,bateriaAntiarea.totalBultos())
 	}
 }
